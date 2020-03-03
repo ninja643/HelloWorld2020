@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hello World 2020</string>
+    <string name="hello_label">Hello World!</string>
+    <string name="hint_first_number">First number</string>
+    <string name="hint_second_number">Second number</string>
+    <string name="number_error">You must enter both numbers</string>
+    <string name="div_by_zero">Cannot divide by zero</string>
+</resources>

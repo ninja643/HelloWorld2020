@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Здраво 2020</string>
+    <string name="hello_label">Здраво, здраво!</string>
+    <string name="hint_first_number">Први број</string>
+    <string name="hint_second_number">Други број</string>
+    <string name="number_error">Унесите оба броја</string>
+    <string name="div_by_zero">Грешка! Дељење нулом</string>
+</resources>
