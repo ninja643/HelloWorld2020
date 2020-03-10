@@ -1,15 +1,22 @@
 package rs.ac.ni.pmf.marko.helloworld2020;
 
+import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    private static final int REQUEST_HISTORY = 1;
+
+    private final ArrayList<Integer> firstNumberHistory = new ArrayList<>();
+    private final ArrayList<Integer> secondNumberHistory = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         showResult(result);
+        firstNumberHistory.add(first);
+        secondNumberHistory.add(second);
     }
 
     private void showResult(int result) {
@@ -64,5 +73,29 @@ public class MainActivity extends AppCompatActivity {
     private int parseNumber(int viewId) {
         EditText edit = findViewById(viewId);
         return Integer.parseInt(edit.getText().toString());
+    }
+
+    public void showHistory(View view) {
+
+        Intent intent = new Intent(this, HistoryActivity.class);
+        intent.putIntegerArrayListExtra(Constants.KEY_FIRST_HISTORY_ARRAY, firstNumberHistory);
+        intent.putIntegerArrayListExtra(Constants.KEY_SECOND_HISTORY_ARRAY, secondNumberHistory);
+
+        startActivityForResult(intent, REQUEST_HISTORY);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        switch (requestCode) {
+            case REQUEST_HISTORY:
+                if (resultCode == RESULT_OK) {
+
+                } else if (resultCode == RESULT_CANCELED) {
+                    // Canceled
+                }
+                break;
+            default:
+                super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }
