@@ -89,9 +89,19 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case REQUEST_HISTORY:
                 if (resultCode == RESULT_OK) {
+                    int index = data.getIntExtra(Constants.KEY_RESPONSE_INDEX, -1);
 
+                    if (index != -1)
+                    {
+                        EditText first = findViewById(R.id.editFirstNumber);
+                        first.setText(String.valueOf(firstNumberHistory.get(index)));
+
+                        EditText second = findViewById(R.id.editSecondNumber);
+                        second.setText(String.valueOf(secondNumberHistory.get(index)));
+                    }
                 } else if (resultCode == RESULT_CANCELED) {
                     // Canceled
+                    Toast.makeText(this, getString(R.string.history_canceled), Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:

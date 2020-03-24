@@ -6,7 +6,9 @@
     <string name="number_error">You must enter both numbers</string>
     <string name="div_by_zero">Cannot divide by zero</string>
     <string name="selectHistoryValue">Select</string>
+    <string name="cancel">Cancel</string>
     <string name="show_history">Show history</string>
     <string name="prev"><![CDATA[<]]></string>
     <string name="next"><![CDATA[>]]></string>
+    <string name="history_canceled">Canceled</string>
 </resources>

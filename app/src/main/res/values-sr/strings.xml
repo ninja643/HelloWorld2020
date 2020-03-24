@@ -6,4 +6,5 @@
     <string name="hint_second_number">Други број</string>
     <string name="number_error">Унесите оба броја</string>
     <string name="div_by_zero">Грешка! Дељење нулом</string>
+    <string name="history_canceled">Одустали сте</string>
 </resources>
