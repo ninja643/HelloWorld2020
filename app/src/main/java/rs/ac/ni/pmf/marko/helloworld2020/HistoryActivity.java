@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -56,6 +57,10 @@ public class HistoryActivity extends AppCompatActivity {
         if (secondNumbers == null) {
             secondNumbers = new ArrayList<>();
         }
+
+//        DataSerializable data = (DataSerializable) startIntent.getSerializableExtra(Constants.KEY_DATA);
+        DataParcelable data = startIntent.getParcelableExtra(Constants.KEY_DATA);
+        Toast.makeText(this, data.toString(), Toast.LENGTH_LONG).show();
     }
 
     public void previous(View view) {
@@ -66,8 +71,7 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
-        if (index < firstNumbers.size() - 1)
-        {
+        if (index < firstNumbers.size() - 1) {
             ++index;
             showData();
         }

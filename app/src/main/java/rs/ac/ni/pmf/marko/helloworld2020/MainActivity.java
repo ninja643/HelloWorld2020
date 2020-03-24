@@ -81,6 +81,13 @@ public class MainActivity extends AppCompatActivity {
         intent.putIntegerArrayListExtra(Constants.KEY_FIRST_HISTORY_ARRAY, firstNumberHistory);
         intent.putIntegerArrayListExtra(Constants.KEY_SECOND_HISTORY_ARRAY, secondNumberHistory);
 
+        //=================================
+        // Ovaj kod bas i nema mnogo smisla
+//        DataSerializable data = new DataSerializable(1, "message");
+        DataParcelable data = new DataParcelable(1, "message");
+        intent.putExtra(Constants.KEY_DATA, data);
+        //=================================
+
         startActivityForResult(intent, REQUEST_HISTORY);
     }
 
@@ -106,6 +113,16 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
                 super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    public void callNumber(View view) {
+        Intent intent = new Intent(Intent.ACTION_CALL);
+
+        if(intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Cannot call", Toast.LENGTH_SHORT).show();
         }
     }
 }

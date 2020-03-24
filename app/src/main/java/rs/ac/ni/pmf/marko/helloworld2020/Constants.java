@@ -5,4 +5,5 @@ public final class Constants {
     public static final String KEY_SECOND_HISTORY_ARRAY = "key_second_array";
 
     public static final String KEY_RESPONSE_INDEX = "key_response_index";
+    public static final String KEY_DATA = "key_data";
 }

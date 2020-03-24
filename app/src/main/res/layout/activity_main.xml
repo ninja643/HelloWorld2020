@@ -90,4 +90,10 @@
         android:layout_height="wrap_content"
         android:onClick="showHistory"
         android:text="@string/show_history"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="callNumber"
+        android:text="@string/call"/>
 </LinearLayout>
