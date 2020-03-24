@@ -7,4 +7,6 @@
     <string name="div_by_zero">Cannot divide by zero</string>
     <string name="selectHistoryValue">Select</string>
     <string name="show_history">Show history</string>
+    <string name="prev"><![CDATA[<]]></string>
+    <string name="next"><![CDATA[>]]></string>
 </resources>
